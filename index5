@@ -1,0 +1,99 @@
+<html>
+<head>
+</head>
+<body style="background-image:url('https://www.bing.com/th?id=OIP.G3tJfv_A5AieXnYqUeJ7DgHaEK&pid=Api&w=2560&h=1440&rs=1&p=0')">
+Blocks: <span id= "q"></span>
+<br>
+Where do you want to put the next stack of blocks. Remember, you want to add to ten
+<br>
+<button onclick= "col1()">column 1</button><span id= "c"></span><br>
+<button onclick= "col2()">column 2</button><span id= "v"></span><br>
+<button onclick= "col3()">column 3</button><span id= "b"></span><br>
+<button onclick= "col4()">column 4</button><span id= "n"></span><br>
+Your score is: <span id= "k">
+</body>
+<script>
+var x = 0;
+document.getElementById('c').innerHTML = 0;
+document.getElementById('v').innerHTML = 0;
+document.getElementById('b').innerHTML = 0;
+document.getElementById('n').innerHTML = 0;
+var l = 0
+document.getElementById('k').innerHTML = l
+GH()
+function GH()
+{
+	x = Math.floor(Math.random() * 9) - 2;
+	if (x == 0)
+	{
+		GH()
+	}
+	document.getElementById('q').innerHTML = x
+	document.getElementById('k').innerHTML = l
+}
+function col1()
+{	
+	h = x + parseInt(document.getElementById('c').innerHTML);
+	document.getElementById('c').innerHTML = h;
+	if (h == 10)
+	{
+		h = 0;
+		document.getElementById('c').innerHTML = h;
+		l = l + 10
+	}
+	else if (h > 10)
+	{
+		window.location.href = 'https://lastline2005.github.io/Games/index2.html';
+	}
+	GH()
+}
+function col2()
+{	
+	g = x + parseInt(document.getElementById('v').innerHTML);
+	document.getElementById('v').innerHTML = g;
+	if (g == 10)
+	{
+		g = 0;
+		document.getElementById('v').innerHTML = g;
+		l = l + 10
+	}
+	else if (g > 10)
+	{
+		window.location.href = 'https://lastline2005.github.io/Games/index2.html';
+	}
+	GH()
+}
+function col3()
+{	
+	f = x + parseInt(document.getElementById('b').innerHTML);
+	document.getElementById('b').innerHTML = f;
+	if (f == 10)
+	{
+		f = 0;
+		document.getElementById('b').innerHTML = f;
+		l = l + 10		
+	}
+	else if (f > 10)
+	{
+		window.location.href = 'https://lastline2005.github.io/Games/index2.html';
+	}
+	GH()
+}
+function col4()
+{	
+	d = x + parseInt(document.getElementById('n').innerHTML);
+	document.getElementById('n').innerHTML = d;
+	if (d == 10)
+	{
+		d = 0;
+		document.getElementById('n').innerHTML = d;
+		l = l + 10	
+	}
+	else if (d > 10)
+	{
+		window.location.href = 'https://lastline2005.github.io/Games/index2.html';
+	}
+	GH()
+}
+</script>
+</html>
