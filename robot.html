@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>I am not a robot test</title>
+    <script>
+      function generateCaptcha() {
+        var captcha = "";
+        var possibleChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 6; i++) {
+          captcha += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length));
+        }
+        document.getElementById("captcha").value = captcha;
+
+        var canvas = document.getElementById("captchaCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.font = "bold 20px Arial";
+        ctx.textAlign = "center";
+        ctx.fillText(captcha, canvas.width/2, canvas.height/2);
+      }
+
+      function validateCaptcha() {
+        var userInput = document.getElementById("userInput").value;
+        var captcha = document.getElementById("captcha").value;
+        if (userInput == captcha) {
+          alert("You are not a robot!");
+        } else {
+          alert("Please try again. You might be a robot!");
+          generateCaptcha();
+        }
+      }
+    </script>
+  </head>
+  <body onload="generateCaptcha();">
+    <h1>I am not a robot test</h1>
+    <p>Please enter the text you see in the image:</p>
+    <input type="text" id="userInput">
+    <br>
+    <canvas id="captchaCanvas" width="120" height="50"></canvas>
+    <input type="text" id="captcha" style="display: none;">
+    <br>
+    <button onclick="validateCaptcha();">Submit</button>
+<a href="Sweater.html">Go to robot page</a>
+
+  </body>
+</html>
